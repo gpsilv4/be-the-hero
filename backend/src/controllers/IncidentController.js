@@ -10,17 +10,17 @@ module.exports= {
             .join('ongs', 'ongs.id', '=', 'incidents.ong_id')
             .limit(5)
             .offset((page - 1) * 5)
-            /*.select([
+            .select([
                 'incidents.*', 
                 'ongs.name', 
                 'ongs.email', 
-                'ongs.whatpsapp', 
+                'ongs.whatsapp', 
                 'ongs.city', 
                 'ongs.district'
-            ]);*/
-            .select(['*']);
+            ]);
+            //.select(['*']);// mostrar campos todos
         
-        response.header('X-Total-count', count['count(*)']);
+        response.header('X-Total-Count', count['count(*)']);
 
         return response.json(incidents);
     },

@@ -23,6 +23,5 @@ module.exports= {
         })
         
         return response.json({ id });
-        //return response.send('Hello World')
     }
 };
